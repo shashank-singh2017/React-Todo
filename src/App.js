@@ -3,26 +3,28 @@ import Header from './Header';
 import InputBox from './InputBox';
 import Item from './Item';
 
-function App() {
+import {useState} from 'react';
 
-  var itemName1 = "Mango";
-  var itemName2 = "Bread";
-  var itemName3 = "Eggs";
+
+function App() {
+  // State is a collection of variables
+  // Initialize a state
+  var [items, setItems] = useState(["Mango", "Orange", "Eggs", "Bread"]);
+
+  console.log(items);
 
   return (
-    <div>
+    <div id="todoapp">
       <Header />
       <InputBox />
-      {/* // Pass data1 ("Mango" or "Bread" etc. in a variable named data1) */}
-      <Item data1={itemName1} />
-      <Item data1={itemName2} />
-      <Item data1={itemName3} />
+
+      {items.map((item) => {
+        return (
+          <Item property1={item}/>
+        );
+      })}
     </div>
   );
 }
 
 export default App;
-
-
-
-
