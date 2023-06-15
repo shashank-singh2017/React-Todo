@@ -1,5 +1,7 @@
 import './Header.css';
 
+// A react component is a javascript function which returns Html content
+
 function Header() {
     return (
         <div>
